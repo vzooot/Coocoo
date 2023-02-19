@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3869CDF29A1413600114656 /* StationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3869CDE29A1413600114656 /* StationsApi.swift */; };
+		C3869CE129A1430C00114656 /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3869CE029A1430C00114656 /* Stations.swift */; };
 		C38FE84829A0DC65005BF439 /* CoocooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE84729A0DC65005BF439 /* CoocooApp.swift */; };
 		C38FE84A29A0DC65005BF439 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE84929A0DC65005BF439 /* ContentView.swift */; };
 		C38FE84C29A0DC67005BF439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38FE84B29A0DC67005BF439 /* Assets.xcassets */; };
 		C38FE84F29A0DC67005BF439 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38FE84E29A0DC67005BF439 /* Preview Assets.xcassets */; };
-		C38FE85929A0DC67005BF439 /* CoocooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE85829A0DC67005BF439 /* CoocooTests.swift */; };
-		C38FE86329A0DC67005BF439 /* CoocooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE86229A0DC67005BF439 /* CoocooUITests.swift */; };
-		C38FE86529A0DC67005BF439 /* CoocooUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE86429A0DC67005BF439 /* CoocooUITestsLaunchTests.swift */; };
+		C38FE85929A0DC67005BF439 /* NotificationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE85829A0DC67005BF439 /* NotificationViewTests.swift */; };
+		C38FE87229A0DC8E005BF439 /* SendNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE87129A0DC8E005BF439 /* SendNotificationUseCase.swift */; };
+		C38FE87429A0E4D7005BF439 /* SendNotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE87329A0E4D7005BF439 /* SendNotificationRepository.swift */; };
+		C38FE87629A0E4F9005BF439 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE87529A0E4F9005BF439 /* NotificationModel.swift */; };
+		C38FE87A29A0E586005BF439 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE87929A0E586005BF439 /* NotificationView.swift */; };
+		C38FE87C29A0EBBB005BF439 /* ReceiveNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE87B29A0EBBB005BF439 /* ReceiveNotificationUseCase.swift */; };
+		C38FE88129A108B5005BF439 /* ReceiveNotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE88029A108B5005BF439 /* ReceiveNotificationRepository.swift */; };
+		C3F19A2F29A23F5100270B47 /* FetchStationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A2E29A23F5100270B47 /* FetchStationsRepository.swift */; };
+		C3F19A3129A240AD00270B47 /* StationsApiAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A3029A240AD00270B47 /* StationsApiAdapter.swift */; };
+		C3F19A3329A242B300270B47 /* StationsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A3229A242B300270B47 /* StationsDto.swift */; };
+		C3F19A3529A24A7A00270B47 /* FetchStationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A3429A24A7A00270B47 /* FetchStationsUseCase.swift */; };
+		C3F19A3729A24ABE00270B47 /* StationDtoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A3629A24ABE00270B47 /* StationDtoMapper.swift */; };
+		C3F19A3C29A24ECA00270B47 /* StationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A3B29A24ECA00270B47 /* StationListView.swift */; };
+		C3F19A4A29A28C4C00270B47 /* AudioPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F19A4929A28C4C00270B47 /* AudioPlayerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,26 +37,33 @@
 			remoteGlobalIDString = C38FE84329A0DC65005BF439;
 			remoteInfo = Coocoo;
 		};
-		C38FE85F29A0DC67005BF439 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C38FE83C29A0DC65005BF439 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C38FE84329A0DC65005BF439;
-			remoteInfo = Coocoo;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3869CDE29A1413600114656 /* StationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsApi.swift; sourceTree = "<group>"; };
+		C3869CE029A1430C00114656 /* Stations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 		C38FE84429A0DC65005BF439 /* Coocoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coocoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38FE84729A0DC65005BF439 /* CoocooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoocooApp.swift; sourceTree = "<group>"; };
 		C38FE84929A0DC65005BF439 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C38FE84B29A0DC67005BF439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C38FE84E29A0DC67005BF439 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C38FE85429A0DC67005BF439 /* CoocooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoocooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C38FE85829A0DC67005BF439 /* CoocooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoocooTests.swift; sourceTree = "<group>"; };
-		C38FE85E29A0DC67005BF439 /* CoocooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoocooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C38FE86229A0DC67005BF439 /* CoocooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoocooUITests.swift; sourceTree = "<group>"; };
-		C38FE86429A0DC67005BF439 /* CoocooUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoocooUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C38FE85829A0DC67005BF439 /* NotificationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewTests.swift; sourceTree = "<group>"; };
+		C38FE87129A0DC8E005BF439 /* SendNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNotificationUseCase.swift; sourceTree = "<group>"; };
+		C38FE87329A0E4D7005BF439 /* SendNotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNotificationRepository.swift; sourceTree = "<group>"; };
+		C38FE87529A0E4F9005BF439 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		C38FE87929A0E586005BF439 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		C38FE87B29A0EBBB005BF439 /* ReceiveNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveNotificationUseCase.swift; sourceTree = "<group>"; };
+		C38FE88029A108B5005BF439 /* ReceiveNotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveNotificationRepository.swift; sourceTree = "<group>"; };
+		C3F19A2E29A23F5100270B47 /* FetchStationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStationsRepository.swift; sourceTree = "<group>"; };
+		C3F19A3029A240AD00270B47 /* StationsApiAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsApiAdapter.swift; sourceTree = "<group>"; };
+		C3F19A3229A242B300270B47 /* StationsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsDto.swift; sourceTree = "<group>"; };
+		C3F19A3429A24A7A00270B47 /* FetchStationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStationsUseCase.swift; sourceTree = "<group>"; };
+		C3F19A3629A24ABE00270B47 /* StationDtoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDtoMapper.swift; sourceTree = "<group>"; };
+		C3F19A3B29A24ECA00270B47 /* StationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListView.swift; sourceTree = "<group>"; };
+		C3F19A4929A28C4C00270B47 /* AudioPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerComponent.swift; sourceTree = "<group>"; };
+		C3F19A4B29A292CA00270B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C3F19A4C29A2951A00270B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C38FE85B29A0DC67005BF439 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,7 +89,6 @@
 			children = (
 				C38FE84629A0DC65005BF439 /* Coocoo */,
 				C38FE85729A0DC67005BF439 /* CoocooTests */,
-				C38FE86129A0DC67005BF439 /* CoocooUITests */,
 				C38FE84529A0DC65005BF439 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +98,6 @@
 			children = (
 				C38FE84429A0DC65005BF439 /* Coocoo.app */,
 				C38FE85429A0DC67005BF439 /* CoocooTests.xctest */,
-				C38FE85E29A0DC67005BF439 /* CoocooUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,8 +105,17 @@
 		C38FE84629A0DC65005BF439 /* Coocoo */ = {
 			isa = PBXGroup;
 			children = (
+				C3F19A4C29A2951A00270B47 /* Info.plist */,
 				C38FE84729A0DC65005BF439 /* CoocooApp.swift */,
 				C38FE84929A0DC65005BF439 /* ContentView.swift */,
+				C38FE88229A108FA005BF439 /* Views */,
+				C38FE87D29A1085F005BF439 /* Models */,
+				C3F19A3829A24CAA00270B47 /* Mappers */,
+				C3F19A3A29A24CF300270B47 /* Adapters */,
+				C38FE87E29A1086D005BF439 /* UseCases */,
+				C38FE87F29A1087B005BF439 /* Repositories */,
+				C3F19A4429A28B9F00270B47 /* Components */,
+				C3F19A3929A24CB900270B47 /* APIs & DTOs */,
 				C38FE84B29A0DC67005BF439 /* Assets.xcassets */,
 				C38FE84D29A0DC67005BF439 /* Preview Content */,
 			);
@@ -113,18 +133,81 @@
 		C38FE85729A0DC67005BF439 /* CoocooTests */ = {
 			isa = PBXGroup;
 			children = (
-				C38FE85829A0DC67005BF439 /* CoocooTests.swift */,
+				C3F19A4B29A292CA00270B47 /* Info.plist */,
+				C38FE85829A0DC67005BF439 /* NotificationViewTests.swift */,
 			);
 			path = CoocooTests;
 			sourceTree = "<group>";
 		};
-		C38FE86129A0DC67005BF439 /* CoocooUITests */ = {
+		C38FE87D29A1085F005BF439 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C38FE86229A0DC67005BF439 /* CoocooUITests.swift */,
-				C38FE86429A0DC67005BF439 /* CoocooUITestsLaunchTests.swift */,
+				C38FE87529A0E4F9005BF439 /* NotificationModel.swift */,
+				C3869CE029A1430C00114656 /* Stations.swift */,
 			);
-			path = CoocooUITests;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C38FE87E29A1086D005BF439 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C3F19A3429A24A7A00270B47 /* FetchStationsUseCase.swift */,
+				C38FE87129A0DC8E005BF439 /* SendNotificationUseCase.swift */,
+				C38FE87B29A0EBBB005BF439 /* ReceiveNotificationUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C38FE87F29A1087B005BF439 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C3F19A2E29A23F5100270B47 /* FetchStationsRepository.swift */,
+				C38FE87329A0E4D7005BF439 /* SendNotificationRepository.swift */,
+				C38FE88029A108B5005BF439 /* ReceiveNotificationRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C38FE88229A108FA005BF439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C38FE87929A0E586005BF439 /* NotificationView.swift */,
+				C3F19A3B29A24ECA00270B47 /* StationListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C3F19A3829A24CAA00270B47 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				C3F19A3629A24ABE00270B47 /* StationDtoMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		C3F19A3929A24CB900270B47 /* APIs & DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				C3F19A3229A242B300270B47 /* StationsDto.swift */,
+				C3869CDE29A1413600114656 /* StationsApi.swift */,
+			);
+			path = "APIs & DTOs";
+			sourceTree = "<group>";
+		};
+		C3F19A3A29A24CF300270B47 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				C3F19A3029A240AD00270B47 /* StationsApiAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		C3F19A4429A28B9F00270B47 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C3F19A4929A28C4C00270B47 /* AudioPlayerComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +248,6 @@
 			productReference = C38FE85429A0DC67005BF439 /* CoocooTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C38FE85D29A0DC67005BF439 /* CoocooUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C38FE86E29A0DC67005BF439 /* Build configuration list for PBXNativeTarget "CoocooUITests" */;
-			buildPhases = (
-				C38FE85A29A0DC67005BF439 /* Sources */,
-				C38FE85B29A0DC67005BF439 /* Frameworks */,
-				C38FE85C29A0DC67005BF439 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C38FE86029A0DC67005BF439 /* PBXTargetDependency */,
-			);
-			name = CoocooUITests;
-			productName = CoocooUITests;
-			productReference = C38FE85E29A0DC67005BF439 /* CoocooUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +262,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					C38FE85329A0DC67005BF439 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = C38FE84329A0DC65005BF439;
-					};
-					C38FE85D29A0DC67005BF439 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = C38FE84329A0DC65005BF439;
 					};
@@ -221,7 +282,6 @@
 			targets = (
 				C38FE84329A0DC65005BF439 /* Coocoo */,
 				C38FE85329A0DC67005BF439 /* CoocooTests */,
-				C38FE85D29A0DC67005BF439 /* CoocooUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,13 +303,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C38FE85C29A0DC67005BF439 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -257,8 +310,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38FE88129A108B5005BF439 /* ReceiveNotificationRepository.swift in Sources */,
 				C38FE84A29A0DC65005BF439 /* ContentView.swift in Sources */,
 				C38FE84829A0DC65005BF439 /* CoocooApp.swift in Sources */,
+				C3F19A3529A24A7A00270B47 /* FetchStationsUseCase.swift in Sources */,
+				C3F19A2F29A23F5100270B47 /* FetchStationsRepository.swift in Sources */,
+				C38FE87A29A0E586005BF439 /* NotificationView.swift in Sources */,
+				C38FE87429A0E4D7005BF439 /* SendNotificationRepository.swift in Sources */,
+				C3F19A4A29A28C4C00270B47 /* AudioPlayerComponent.swift in Sources */,
+				C3F19A3329A242B300270B47 /* StationsDto.swift in Sources */,
+				C38FE87C29A0EBBB005BF439 /* ReceiveNotificationUseCase.swift in Sources */,
+				C3F19A3C29A24ECA00270B47 /* StationListView.swift in Sources */,
+				C3869CE129A1430C00114656 /* Stations.swift in Sources */,
+				C38FE87629A0E4F9005BF439 /* NotificationModel.swift in Sources */,
+				C3F19A3729A24ABE00270B47 /* StationDtoMapper.swift in Sources */,
+				C3869CDF29A1413600114656 /* StationsApi.swift in Sources */,
+				C38FE87229A0DC8E005BF439 /* SendNotificationUseCase.swift in Sources */,
+				C3F19A3129A240AD00270B47 /* StationsApiAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,16 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38FE85929A0DC67005BF439 /* CoocooTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C38FE85A29A0DC67005BF439 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C38FE86529A0DC67005BF439 /* CoocooUITestsLaunchTests.swift in Sources */,
-				C38FE86329A0DC67005BF439 /* CoocooUITests.swift in Sources */,
+				C38FE85929A0DC67005BF439 /* NotificationViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +345,6 @@
 			isa = PBXTargetDependency;
 			target = C38FE84329A0DC65005BF439 /* Coocoo */;
 			targetProxy = C38FE85529A0DC67005BF439 /* PBXContainerItemProxy */;
-		};
-		C38FE86029A0DC67005BF439 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C38FE84329A0DC65005BF439 /* Coocoo */;
-			targetProxy = C38FE85F29A0DC67005BF439 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -420,6 +474,7 @@
 				DEVELOPMENT_TEAM = B637BE2R39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Coocoo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +504,7 @@
 				DEVELOPMENT_TEAM = B637BE2R39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Coocoo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,6 +532,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B637BE2R39;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoocooTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.woqomoqo.CoocooTests;
@@ -496,6 +554,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B637BE2R39;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoocooTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.woqomoqo.CoocooTests;
@@ -504,42 +564,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coocoo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coocoo";
-			};
-			name = Release;
-		};
-		C38FE86F29A0DC67005BF439 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B637BE2R39;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.woqomoqo.CoocooUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Coocoo;
-			};
-			name = Debug;
-		};
-		C38FE87029A0DC67005BF439 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B637BE2R39;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.woqomoqo.CoocooUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Coocoo;
 			};
 			name = Release;
 		};
@@ -569,15 +593,6 @@
 			buildConfigurations = (
 				C38FE86C29A0DC67005BF439 /* Debug */,
 				C38FE86D29A0DC67005BF439 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C38FE86E29A0DC67005BF439 /* Build configuration list for PBXNativeTarget "CoocooUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C38FE86F29A0DC67005BF439 /* Debug */,
-				C38FE87029A0DC67005BF439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
