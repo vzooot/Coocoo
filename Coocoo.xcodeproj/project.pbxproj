@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4CA1E1229A3845700E0CE09 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CA1E1129A3845700E0CE09 /* SwiftUIView.swift */; };
 		C3869CDF29A1413600114656 /* StationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3869CDE29A1413600114656 /* StationsApi.swift */; };
 		C3869CE129A1430C00114656 /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3869CE029A1430C00114656 /* Stations.swift */; };
 		C38FE84829A0DC65005BF439 /* CoocooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE84729A0DC65005BF439 /* CoocooApp.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A4CA1E1129A3845700E0CE09 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		C3869CDE29A1413600114656 /* StationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsApi.swift; sourceTree = "<group>"; };
 		C3869CE029A1430C00114656 /* Stations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 		C38FE84429A0DC65005BF439 /* Coocoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coocoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 			children = (
 				C38FE87929A0E586005BF439 /* NotificationView.swift */,
 				C3F19A3B29A24ECA00270B47 /* StationListView.swift */,
+				A4CA1E1129A3845700E0CE09 /* SwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				C38FE88129A108B5005BF439 /* ReceiveNotificationRepository.swift in Sources */,
 				C38FE84A29A0DC65005BF439 /* ContentView.swift in Sources */,
+				A4CA1E1229A3845700E0CE09 /* SwiftUIView.swift in Sources */,
 				C38FE84829A0DC65005BF439 /* CoocooApp.swift in Sources */,
 				C3F19A3529A24A7A00270B47 /* FetchStationsUseCase.swift in Sources */,
 				C3F19A2F29A23F5100270B47 /* FetchStationsRepository.swift in Sources */,

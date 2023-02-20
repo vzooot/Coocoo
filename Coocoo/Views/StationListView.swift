@@ -15,8 +15,7 @@ struct StationListView: View {
     let fetchStationsUseCase: FetchStationsUseCase
 
     init(viewAdapter: ViewAdapter = ViewAdapter(),
-         fetchStationsUseCase: FetchStationsUseCase = FetchStationsInteractor())
-    {
+         fetchStationsUseCase: FetchStationsUseCase = FetchStationsInteractor()) {
         _viewAdapter = .init(initialValue: viewAdapter)
         self.fetchStationsUseCase = fetchStationsUseCase
     }
@@ -41,27 +40,37 @@ struct StationListView: View {
     // MARK: - Views
 
     @ViewBuilder var notRequestedView: some View {
-        Text("").onAppear(perform: fetchStations)
+        EmptyView().onAppear(perform: fetchStations)
     }
 
     @ViewBuilder func stationsView(stations: [Station]) -> some View {
         List {
-            ForEach(stations, id: \.self) { station in
+            ForEach(stations.indices, id: \.self) { station in
                 HStack {
-                    Text(station.name ?? "")
+                    Text(viewAdapter.stations.stationsList[station].name ?? "")
                     Spacer()
-                    AudioPlayerComponent(player: $viewAdapter.player,
-                                         pauseAll: {
-                                             pauseAll(station: station)
-                                         },
-                                         play: {
-                                             viewAdapter.stations.stationsList.forEach { _ in
-                                                 viewAdapter.station.isPlaying = false
-                                             }
-                                             play(station: station,
-                                                  url: station.streamUrl ?? "")
-                                         },
-                                         station: station)
+
+                    AudioPlayerComponent(player: $viewAdapter.player, station: $viewAdapter.stations.stationsList[station]) {
+                        viewAdapter.stations.stationsList.indices.forEach { stationIndex in
+                            if viewAdapter.stations.stationsList[stationIndex].id == viewAdapter.stations.stationsList[station].id {
+                                viewAdapter.stations.stationsList[stationIndex].isPlaying = false
+                            }
+                        }
+
+                        pauseAll()
+
+                    } play: {
+                        for i in 0 ..< viewAdapter.stations.stationsList.count {
+                            viewAdapter.stations.stationsList[i].isPlaying = false
+                        }
+
+                        viewAdapter.stations.stationsList.indices.forEach { stationIndex in
+                            if viewAdapter.stations.stationsList[stationIndex].id == viewAdapter.stations.stationsList[station].id {
+                                viewAdapter.stations.stationsList[stationIndex].isPlaying = true
+                            }
+                        }
+                        play(station: viewAdapter.stations.stationsList[station], url: viewAdapter.stations.stationsList[station].streamUrl ?? "")
+                    }
                 }
             }
         }
@@ -69,7 +78,7 @@ struct StationListView: View {
 
     // MARK: - Side Effects
 
-    func pauseAll(station _: Station) {
+    func pauseAll() {
         viewAdapter.player.pause()
     }
 
@@ -99,7 +108,6 @@ struct StationListView: View {
 
 extension StationListView {
     struct ViewAdapter {
-        var isPlaying: Bool = false
         var player: AVPlayer = .init()
         var isLoading: Bool = true
         var cancellables = Set<AnyCancellable>()
@@ -114,5 +122,3 @@ struct StationListView_Previews: PreviewProvider {
         StationListView()
     }
 }
-
-

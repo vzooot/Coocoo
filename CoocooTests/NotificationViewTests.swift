@@ -44,13 +44,13 @@ final class NotificationViewTests: XCTestCase {
         expectation.assertForOverFulfill = true
         let expectedModel = NotificationModel(title: "Test Notification", message: "This is a test notification")
         let notification = Notification(name: Notification.Name("TestNotification"),
-                                         object: nil,
-                                         userInfo: ["title": "Test Notification", "message": "This is a test notification"])
+                                        object: nil,
+                                        userInfo: ["title": "Test Notification", "message": "This is a test notification"])
         let notificationPublisher = Just(notification).eraseToAnyPublisher()
         let repository = ReceiveNotificationRepositoryMock()
         repository.receivedNotificationPublisherReturnValue = notificationPublisher
         let interactor = ReceiveNotificationInteractor(repository: repository)
-        
+
         // When
         let cancellable = interactor.receivedNotificationPublisher()
             .sink { receivedModel in
@@ -58,17 +58,16 @@ final class NotificationViewTests: XCTestCase {
                 XCTAssertEqual(receivedModel, expectedModel)
                 expectation.fulfill()
             }
-        
+
         // Wait for the expectation to be fulfilled
         wait(for: [expectation], timeout: 5.0)
-        
+
         // Cancel the publisher
         cancellable.cancel()
-        
+
         // Verify that the repository method was called
         XCTAssertEqual(repository.receivedNotificationPublisherCallCount, 1)
     }
-
 
     func testReceiveNotificationError() {
         receiveNotificationUseCase.shouldFail = true
@@ -88,7 +87,6 @@ final class NotificationViewTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1)
     }
-
 }
 
 class MockSendNotificationUseCase: SendNotificationUseCase {
@@ -115,7 +113,6 @@ class MockReceiveNotificationUseCase: ReceiveNotificationUseCase {
         }
     }
 }
-
 
 class ReceiveNotificationRepositoryMock: ReceiveNotificationRepository {
     var receivedNotificationPublisherCallCount = 0

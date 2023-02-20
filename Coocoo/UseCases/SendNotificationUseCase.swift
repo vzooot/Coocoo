@@ -11,13 +11,13 @@ protocol SendNotificationUseCase {
     func sendNotification(title: String, message: String, name: CustomNotificationNames)
 }
 
-struct SendNotificationInteractor: SendNotificationUseCase{
+struct SendNotificationInteractor: SendNotificationUseCase {
     let repository: SendNotificationRepository
-    
+
     init(repository: SendNotificationRepository = SendNotificationDataStore()) {
         self.repository = repository
     }
-    
+
     func sendNotification(title: String, message: String, name: CustomNotificationNames) {
         repository.sendNotification(title: title, message: message, name: name)
     }

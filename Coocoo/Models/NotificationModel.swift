@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct NotificationModel: Equatable {
     let title: String
     let message: String
@@ -18,7 +17,6 @@ extension Notification.Name {
         self = Notification.Name(rawValue: notificationNames.rawValue)
     }
 }
-
 
 enum CustomNotificationNames: String {
     case customNotificationOne

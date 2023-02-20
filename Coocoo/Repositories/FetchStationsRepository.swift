@@ -17,8 +17,7 @@ struct FetchStationsDataStore: FetchStationsRepository {
     let stationDtoMapper: StationDtoMapper
 
     init(stationsAPI: StationsApiAdapter.Type = DefaultStationsApi.self,
-         stationDtoMapper: StationDtoMapper = ServerDtoMapper())
-    {
+         stationDtoMapper: StationDtoMapper = ServerDtoMapper()) {
         self.stationsAPI = stationsAPI
         self.stationDtoMapper = stationDtoMapper
     }

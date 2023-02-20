@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedIndex: Int?
+
     var body: some View {
-//        NotificationView()
+        //        NotificationView()
         StationListView()
+
+        List {
+            ForEach(0 ..< 5) { index in
+                PlayButton(index: index, selectedIndex: $selectedIndex)
+            }
+        }
     }
 }
 

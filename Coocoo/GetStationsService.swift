@@ -15,7 +15,7 @@ class StationsAPI: ObservableObject {
     func getStations() -> AnyPublisher<Stations, Error> {
         let headers = [
             "X-RapidAPI-Key": "b8435d1d0dmsh085a73df994d451p133d3ajsnb8747b0eb5a2",
-            "X-RapidAPI-Host": "30-000-radio-stations-and-music-charts.p.rapidapi.com"
+            "X-RapidAPI-Host": "30-000-radio-stations-and-music-charts.p.rapidapi.com",
         ]
 
         guard let url = URL(string: "https://30-000-radio-stations-and-music-charts.p.rapidapi.com/rapidapi?country=ALL&keyword=0&genre=ALL") else {
@@ -25,7 +25,7 @@ class StationsAPI: ObservableObject {
         guard let localUrl = URL(string: "http://localhost:3000/api") else {
             return Fail(outputType: Stations.self, failure: NSError(domain: "100", code: 100)).eraseToAnyPublisher()
         }
-        
+
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = headers
 

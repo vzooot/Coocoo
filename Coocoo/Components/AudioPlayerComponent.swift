@@ -10,18 +10,16 @@ import SwiftUI
 
 struct AudioPlayerComponent: View {
     @Binding var player: AVPlayer
-    let pauseAll: () -> Void
+    @Binding var station: Station
+    let pause: () -> Void
     let play: () -> Void
-    @State var station: Station
-    
+
     var body: some View {
         Button(action: {
             if station.isPlaying {
-                pauseAll()
-                station.isPlaying = false
+                pause()
             } else {
                 play()
-                station.isPlaying = true
             }
         }) {
             Image(systemName: station.isPlaying ? "pause.circle.fill" : "play.circle.fill")
@@ -32,9 +30,8 @@ struct AudioPlayerComponent: View {
     }
 }
 
-
-// struct AudioPlayerComponent_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AudioPlayerComponent(url: "http://sokfm.lalala.gr:8000/;stream/1")
-//    }
-// }
+struct AudioPlayerComponent_Previews: PreviewProvider {
+    static var previews: some View {
+        AudioPlayerComponent(player: .constant(AVPlayer()), station: .constant(Station())) {} play: {}
+    }
+}
