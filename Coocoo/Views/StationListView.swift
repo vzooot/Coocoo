@@ -39,37 +39,23 @@ struct StationListView: View {
 
     // MARK: - Views
 
+    
+
     @ViewBuilder var notRequestedView: some View {
         EmptyView().onAppear(perform: fetchStations)
     }
 
     @ViewBuilder func stationsView(stations: [Station]) -> some View {
         List {
-            ForEach(stations.indices, id: \.self) { station in
+            ForEach(stations.indices, id: \.self) { index in
                 HStack {
-                    Text(viewAdapter.stations.stationsList[station].name ?? "")
+                    Text(viewAdapter.stations.stationsList[index].name ?? "")
                     Spacer()
-
-                    AudioPlayerComponent(player: $viewAdapter.player, station: $viewAdapter.stations.stationsList[station]) {
-                        viewAdapter.stations.stationsList.indices.forEach { stationIndex in
-                            if viewAdapter.stations.stationsList[stationIndex].id == viewAdapter.stations.stationsList[station].id {
-                                viewAdapter.stations.stationsList[stationIndex].isPlaying = false
-                            }
-                        }
-
+                    AudioPlayerComponent(index: index, selectedIndex: $viewAdapter.selectedIndex) {
                         pauseAll()
-
                     } play: {
-                        for i in 0 ..< viewAdapter.stations.stationsList.count {
-                            viewAdapter.stations.stationsList[i].isPlaying = false
-                        }
-
-                        viewAdapter.stations.stationsList.indices.forEach { stationIndex in
-                            if viewAdapter.stations.stationsList[stationIndex].id == viewAdapter.stations.stationsList[station].id {
-                                viewAdapter.stations.stationsList[stationIndex].isPlaying = true
-                            }
-                        }
-                        play(station: viewAdapter.stations.stationsList[station], url: viewAdapter.stations.stationsList[station].streamUrl ?? "")
+                        play(station: viewAdapter.stations.stationsList[index],
+                             url: viewAdapter.stations.stationsList[index].streamUrl ?? "")
                     }
                 }
             }
@@ -82,7 +68,7 @@ struct StationListView: View {
         viewAdapter.player.pause()
     }
 
-    func play(station _: Station, url: String) {
+    func play(station: Station, url: String) {
         guard let url = URL(string: url) else { return }
         viewAdapter.player = AVPlayer(url: url)
         viewAdapter.player.play()
@@ -113,7 +99,8 @@ extension StationListView {
         var cancellables = Set<AnyCancellable>()
         var error: Error?
         var stations: Stations = .init(stationsList: [])
-        var station: Station = .init()
+//        var station: Station = .init()
+        var selectedIndex: Int? = nil
     }
 }
 
