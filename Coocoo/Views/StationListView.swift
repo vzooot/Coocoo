@@ -15,7 +15,8 @@ struct StationListView: View {
     let fetchStationsUseCase: FetchStationsUseCase
 
     init(viewAdapter: ViewAdapter = ViewAdapter(),
-         fetchStationsUseCase: FetchStationsUseCase = FetchStationsInteractor()) {
+         fetchStationsUseCase: FetchStationsUseCase = FetchStationsInteractor())
+    {
         _viewAdapter = .init(initialValue: viewAdapter)
         self.fetchStationsUseCase = fetchStationsUseCase
     }
@@ -25,7 +26,8 @@ struct StationListView: View {
             if viewAdapter.isLoading {
                 ProgressView()
             } else {
-                stationsView(stations: viewAdapter.stations.stationsList)
+                stationsView(stations: viewAdapter.stations)
+                    .background(Color("bg_01"))
             }
             if let error = viewAdapter.error {
                 Text(error.localizedDescription)
@@ -39,25 +41,19 @@ struct StationListView: View {
 
     // MARK: - Views
 
-    
-
     @ViewBuilder var notRequestedView: some View {
         EmptyView().onAppear(perform: fetchStations)
     }
 
     @ViewBuilder func stationsView(stations: [Station]) -> some View {
-        List {
-            ForEach(stations.indices, id: \.self) { index in
-                HStack {
-                    Text(viewAdapter.stations.stationsList[index].name ?? "")
-                    Spacer()
-                    AudioPlayerComponent(index: index, selectedIndex: $viewAdapter.selectedIndex) {
-                        pauseAll()
-                    } play: {
-                        play(station: viewAdapter.stations.stationsList[index],
-                             url: viewAdapter.stations.stationsList[index].streamUrl ?? "")
-                    }
+        ScrollView {
+            ForEach(viewAdapter.stations, id: \.self) { station in
+                StationButton(station: station, selectedStation: $viewAdapter.selectedStation) {
+                    pauseAll()
+                } play: {
+                    play(url: station.streamUrl ?? "")
                 }
+                .padding([.horizontal, .bottom], 10)
             }
         }
     }
@@ -68,10 +64,18 @@ struct StationListView: View {
         viewAdapter.player.pause()
     }
 
-    func play(station: Station, url: String) {
+    func play(url: String) {
         guard let url = URL(string: url) else { return }
-        viewAdapter.player = AVPlayer(url: url)
-        viewAdapter.player.play()
+        let audioSession = AVAudioSession.sharedInstance()
+
+        do {
+            try audioSession.setCategory(.playback, mode: .default)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+            viewAdapter.player = AVPlayer(url: url)
+            viewAdapter.player.play()
+        } catch {
+            print("Error starting playback: \(error.localizedDescription)")
+        }
     }
 
     func fetchStations() {
@@ -94,13 +98,13 @@ struct StationListView: View {
 
 extension StationListView {
     struct ViewAdapter {
+        var audioPlayer: AVAudioPlayer!
         var player: AVPlayer = .init()
         var isLoading: Bool = true
         var cancellables = Set<AnyCancellable>()
         var error: Error?
-        var stations: Stations = .init(stationsList: [])
-//        var station: Station = .init()
-        var selectedIndex: Int? = nil
+        var stations: [Station] = []
+        var selectedStation: Station? = nil
     }
 }
 

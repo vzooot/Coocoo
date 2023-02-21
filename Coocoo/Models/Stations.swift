@@ -5,11 +5,7 @@
 //  Created by Administrator on 2/18/23.
 //
 
-import Foundation
-
-struct Stations: Codable, Hashable {
-    var stationsList: [Station]
-}
+import SwiftUI
 
 struct Station: Codable, Hashable {
     var id: String?
@@ -30,4 +26,16 @@ struct Station: Codable, Hashable {
         case streamUrl = "u"
         case logo = "l"
     }
+}
+
+extension PreviewProvider {
+    static var dev: DeveloperPreview {
+        return DeveloperPreview.instance
+    }
+}
+
+struct DeveloperPreview {
+    static let instance = DeveloperPreview()
+
+    let station = Station(id: "18107", genreId: "8", name: "Radio Athens Deejay", country: "GR", genreName: "AC", streamUrl: "http://94.23.0.114:41972/;stream.mp3", logo: "radio-athens-deejay.jpg", isPlaying: false)
 }

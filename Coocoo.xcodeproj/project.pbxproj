@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3752FAB29A406660093EE9B /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3752FAA29A406660093EE9B /* StationButton.swift */; };
 		C3869CDF29A1413600114656 /* StationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3869CDE29A1413600114656 /* StationsApi.swift */; };
 		C3869CE129A1430C00114656 /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3869CE029A1430C00114656 /* Stations.swift */; };
 		C38FE84829A0DC65005BF439 /* CoocooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FE84729A0DC65005BF439 /* CoocooApp.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3752FAA29A406660093EE9B /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
 		C3869CDE29A1413600114656 /* StationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsApi.swift; sourceTree = "<group>"; };
 		C3869CE029A1430C00114656 /* Stations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 		C38FE84429A0DC65005BF439 /* Coocoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coocoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F19A4929A28C4C00270B47 /* AudioPlayerComponent.swift */,
+				C3752FAA29A406660093EE9B /* StationButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				C38FE87C29A0EBBB005BF439 /* ReceiveNotificationUseCase.swift in Sources */,
 				C3F19A3C29A24ECA00270B47 /* StationListView.swift in Sources */,
 				C3869CE129A1430C00114656 /* Stations.swift in Sources */,
+				C3752FAB29A406660093EE9B /* StationButton.swift in Sources */,
 				C38FE87629A0E4F9005BF439 /* NotificationModel.swift in Sources */,
 				C3F19A3729A24ABE00270B47 /* StationDtoMapper.swift in Sources */,
 				C3869CDF29A1413600114656 /* StationsApi.swift in Sources */,
@@ -480,6 +484,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +515,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,7 +8,7 @@
 import Combine
 
 protocol FetchStationsUseCase {
-    func fetchStations() -> AnyPublisher<Stations, Error>
+    func fetchStations() -> AnyPublisher<[Station], Error>
 }
 
 struct FetchStationsInteractor: FetchStationsUseCase {
@@ -18,7 +18,7 @@ struct FetchStationsInteractor: FetchStationsUseCase {
         self.fetchStationsRepository = fetchStationsRepository
     }
 
-    func fetchStations() -> AnyPublisher<Stations, Error> {
+    func fetchStations() -> AnyPublisher<[Station], Error> {
         fetchStationsRepository.fetchStations()
     }
 }

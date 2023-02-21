@@ -1,39 +1,39 @@
+////
+////  AudioPlayerComponent.swift
+////  Coocoo
+////
+////  Created by Administrator on 2/19/23.
+////
 //
-//  AudioPlayerComponent.swift
-//  Coocoo
+//import AVKit
+//import SwiftUI
 //
-//  Created by Administrator on 2/19/23.
+//struct AudioPlayerComponent: View {
+//    let station: Station
+//    @Binding var selectedStation: Station?
+//    let pause: () -> Void
+//    let play: () -> Void
 //
-
-import AVKit
-import SwiftUI
-
-struct AudioPlayerComponent: View {
-    let index: Int
-    @Binding var selectedIndex: Int?
-    let pause: () -> Void
-    let play: () -> Void
-
-    var body: some View {
-        Button(action: {
-            if selectedIndex == index {
-                selectedIndex = nil
-                pause()
-            } else {
-                selectedIndex = index
-                play()
-            }
-        }) {
-            Image(systemName: selectedIndex == index ? "pause.circle.fill" : "play.circle.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 25, height: 25)
-        }
-    }
-}
-
-struct AudioPlayerComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        AudioPlayerComponent(index: 1, selectedIndex: .constant(nil)) {} play: {}
-    }
-}
+//    var body: some View {
+//        Button(action: {
+//            if selectedStation == station {
+//                selectedStation = nil
+//                pause()
+//            } else {
+//                selectedStation = station
+//                play()
+//            }
+//        }) {
+//            Image(systemName: selectedStation == station ? "pause.circle.fill" : "play.circle.fill")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 40, height: 40)
+//        }
+//    }
+//}
+//
+//struct AudioPlayerComponent_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AudioPlayerComponent(station: dev.station, selectedStation: .constant(nil)) {} play: {}
+//    }
+//}

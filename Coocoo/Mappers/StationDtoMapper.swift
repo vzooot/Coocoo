@@ -17,6 +17,6 @@ protocol StationDtoMapper {
 
 extension ServerDtoMapper: StationDtoMapper {
     func mapStation(stationDto dto: StationDto) -> Station {
-        Station(id: dto.i, name: dto.n, country: dto.c, genreName: dto.g, streamUrl: dto.u, logo: dto.l)
+        Station(id: dto.i, genreId: dto.d, name: dto.n, country: dto.c, genreName: dto.g, streamUrl: dto.u, logo: dto.c)
     }
 }

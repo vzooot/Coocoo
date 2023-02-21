@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol FetchStationsRepository {
-    func fetchStations() -> AnyPublisher<Stations, Error>
+    func fetchStations() -> AnyPublisher<[Station], Error>
 }
 
 struct FetchStationsDataStore: FetchStationsRepository {
@@ -17,17 +17,19 @@ struct FetchStationsDataStore: FetchStationsRepository {
     let stationDtoMapper: StationDtoMapper
 
     init(stationsAPI: StationsApiAdapter.Type = DefaultStationsApi.self,
-         stationDtoMapper: StationDtoMapper = ServerDtoMapper()) {
+         stationDtoMapper: StationDtoMapper = ServerDtoMapper())
+    {
         self.stationsAPI = stationsAPI
         self.stationDtoMapper = stationDtoMapper
     }
 
-    func fetchStations() -> AnyPublisher<Stations, Error> {
+    func fetchStations() -> AnyPublisher<[Station], Error> {
         stationsAPI.getStations()
             .tryMap { stationsDto in
-                Stations(stationsList: stationsDto.results.map { stationDto in
+                stationsDto.results.map { stationDto in
+
                     stationDtoMapper.mapStation(stationDto: stationDto)
-                })
+                }
             }
             .eraseToAnyPublisher()
     }
